@@ -1307,7 +1307,7 @@ function ContactoSection() {
                         value={form.mensaje}
                         onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
                         className="w-full bg-[#050d1a] border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-700 focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
-                        placeholder="Cuéntanos sobre tu interés en POTENC<span className="text-cyan-400">IA</span> 2026..."
+                        placeholder="Cuéntanos sobre tu interés en POTENCIA 2026..."
                       />
                     </div>
                     <button
