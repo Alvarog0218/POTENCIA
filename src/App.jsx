@@ -371,7 +371,7 @@ function ImpactoSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   03 · ¿Por qué POTENCIA IA?
+   03 · ¿Por qué POTENC<span className="text-cyan-400">IA</span>?
 ───────────────────────────────────────────────────────────────── */
 
 function PorQueSection() {
@@ -409,7 +409,7 @@ function PorQueSection() {
           <div className="text-center mb-14">
             <span className="text-amber-400 text-xs font-bold tracking-[0.22em] uppercase">El diferencial</span>
             <h2 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl mt-3">
-              ¿POR QUÉ POTENCIA IA?
+              ¿POR QUÉ POTENC<span className="text-cyan-400">IA</span>?
             </h2>
           </div>
         </Reveal>
@@ -425,7 +425,7 @@ function PorQueSection() {
                 No solo hablamos de inteligencia artificial. Convocamos talento, fortalecemos proyectos y conectamos soluciones reales con empresas e instituciones que las necesitan."
               </span>
             </p>
-            <p className="text-slate-600 text-sm mt-5">— Propuesta Estratégica POTENCIA IA 2026</p>
+            <p className="text-slate-600 text-sm mt-5">— Propuesta Estratégica POTENC<span className="text-cyan-400">IA</span> 2026</p>
           </div>
         </Reveal>
 
@@ -1240,7 +1240,7 @@ function ContactoSection() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="font-display font-bold text-white text-2xl mb-2">¡Mensaje enviado!</h3>
-                  <p className="text-slate-500">El equipo de POTENCIA IA se pondrá en contacto contigo muy pronto.</p>
+                  <p className="text-slate-500">El equipo de POTENC<span className="text-cyan-400">IA</span> se pondrá en contacto contigo muy pronto.</p>
                   <button
                     onClick={() => setSent(false)}
                     className="mt-6 text-cyan-400 text-sm hover:underline"
@@ -1307,7 +1307,7 @@ function ContactoSection() {
                         value={form.mensaje}
                         onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
                         className="w-full bg-[#050d1a] border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-700 focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
-                        placeholder="Cuéntanos sobre tu interés en POTENCIA IA 2026..."
+                        placeholder="Cuéntanos sobre tu interés en POTENC<span className="text-cyan-400">IA</span> 2026..."
                       />
                     </div>
                     <button
