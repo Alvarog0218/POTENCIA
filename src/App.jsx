@@ -221,7 +221,7 @@ function Hero() {
             POTENC<span className="text-cyan-400">IA</span>
           </span>
           <span className="block text-[clamp(2rem,7vw,5.5rem)] tracking-widest text-slate-300 mt-1">
-            IA 2026
+            2026
           </span>
         </h1>
 
