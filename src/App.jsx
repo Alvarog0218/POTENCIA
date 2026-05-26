@@ -229,12 +229,16 @@ function Hero() {
         <p className="text-xl sm:text-2xl text-slate-400 max-w-2xl mx-auto mt-7 mb-3 leading-relaxed">
           Feria de Inteligencia Artificial, Empresa y Talento
         </p>
-        <p className="text-base text-slate-600 mb-12">
-          Organizado por{' '}
-          <span className="text-slate-300 font-semibold">CLAP</span>
-          {' '}+{' '}
-          <span className="text-slate-300 font-semibold">BIGDATIA</span>
-        </p>
+        <div className="flex items-center justify-center gap-6 mt-4 mb-12">
+          <p className="text-sm text-slate-600 uppercase tracking-widest font-medium">
+            Organizado por
+          </p>
+          <div className="flex items-center gap-8">
+            <img src="/assets/images/logo-clap.png" alt="CLAP Logo" className="h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+            <div className="w-px h-6 bg-slate-800" />
+            <img src="/assets/images/logo-bigdatia.png" alt="BIGDATIA Logo" className="h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
+        </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -1209,22 +1213,18 @@ function ContactoSection() {
 
               {/* Organizers */}
               <div className="rounded-2xl p-6 bg-[#0a1628] border border-slate-700/50">
-                <p className="text-slate-600 text-xs uppercase tracking-wider font-bold mb-4">Organizado por</p>
-                <div className="flex items-center gap-5">
-                  <div className="text-center">
-                    <div className="w-16 h-16 rounded-xl bg-cyan-500/12 border border-cyan-500/20 flex items-center justify-center mb-1.5">
-                      <span className="font-display font-black text-cyan-400 text-lg">CLAP</span>
-                    </div>
-                    <p className="text-slate-600 text-xs">CLAP</p>
+                <p className="text-slate-600 text-xs uppercase tracking-wider font-bold mb-6">Organizado por</p>
+                <div className="flex flex-wrap items-center gap-8">
+                  <div className="flex flex-col items-center gap-2">
+                    <img src="/assets/images/logo-clap.png" alt="CLAP" className="h-10 md:h-12 w-auto" />
+                    <p className="text-slate-600 text-[10px] uppercase tracking-tighter">CLAP</p>
                   </div>
-                  <div className="text-slate-700 text-2xl font-bold">+</div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 rounded-xl bg-amber-500/12 border border-amber-500/20 flex items-center justify-center mb-1.5">
-                      <span className="font-display font-black text-amber-400 text-[10px] text-center leading-tight px-1">BIG<br/>DATIA</span>
-                    </div>
-                    <p className="text-slate-600 text-xs">BIGDATIA</p>
+                  <div className="text-slate-700 text-2xl font-light">×</div>
+                  <div className="flex flex-col items-center gap-2">
+                    <img src="/assets/images/logo-bigdatia.png" alt="BIGDATIA" className="h-10 md:h-12 w-auto" />
+                    <p className="text-slate-600 text-[10px] uppercase tracking-tighter">BIGDATIA</p>
                   </div>
-                  <div className="ml-2">
+                  <div className="ml-auto border-l border-slate-800 pl-6 hidden sm:block">
                     <p className="text-slate-300 text-sm font-semibold">Bucaramanga, Santander</p>
                     <p className="text-slate-600 text-xs mt-0.5">Colombia · 2026</p>
                   </div>
@@ -1335,27 +1335,33 @@ function ContactoSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#050d1a] border-t border-slate-800/80 py-10">
+    <footer className="bg-[#050d1a] border-t border-slate-800/80 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-5">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center">
-              <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center">
+              <Cpu className="w-4 h-4 text-cyan-400" />
             </div>
-            <span className="font-display font-black text-lg text-white">
+            <span className="font-display font-black text-xl text-white">
               POTENC<span className="text-cyan-400">IA</span>
-              <span className="text-slate-700 font-normal text-sm ml-1.5">2026</span>
+              <span className="text-slate-700 font-normal text-sm ml-2">2026</span>
             </span>
           </div>
-          <p className="text-slate-700 text-sm text-center">
-            Feria de Inteligencia Artificial, Empresa y Talento · Bucaramanga, Santander, Colombia
-          </p>
-          <p className="text-slate-700 text-sm">
-            Organizado por{' '}
-            <span className="text-slate-500">CLAP</span>
-            {' '}+{' '}
-            <span className="text-slate-500">BIGDATIA</span>
-          </p>
+
+          <div className="flex items-center gap-6 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <img src="/assets/images/logo-clap.png" alt="CLAP" className="h-6 w-auto" />
+            <div className="w-px h-4 bg-slate-800" />
+            <img src="/assets/images/logo-bigdatia.png" alt="BIGDATIA" className="h-6 w-auto" />
+          </div>
+
+          <div className="text-right flex flex-col items-center md:items-end">
+            <p className="text-slate-700 text-sm">
+              Feria de Inteligencia Artificial, Empresa y Talento
+            </p>
+            <p className="text-slate-800 text-[10px] uppercase tracking-widest mt-1">
+              Bucaramanga · Santander · Colombia
+            </p>
+          </div>
         </div>
       </div>
     </footer>
