@@ -342,9 +342,11 @@ function ImpactoSection() {
                 </div>
                 <span className="font-display font-black text-xl text-white tracking-wide">VIERNES</span>
               </div>
-              <p className="text-cyan-400 font-semibold text-sm mb-1.5">Empresas e Instituciones</p>
+              <p className="text-cyan-400 font-semibold text-sm mb-1.5">Abierto a todo público</p>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Cámara de Comercio, universidades, gremios, marcas, empresas de seguridad, directivos y aliados.
+                Evento abierto a toda la comunidad. Incluye{' '}
+                <span className="text-cyan-300 font-medium">espacios exclusivos para empresas e instituciones</span>
+                {' '}— paneles empresariales, rueda de conexión y networking con directivos, gremios y aliados estratégicos.
               </p>
             </div>
             <div className="rounded-2xl p-6 bg-[#0a1628] border border-amber-500/20">
@@ -354,9 +356,11 @@ function ImpactoSection() {
                 </div>
                 <span className="font-display font-black text-xl text-white tracking-wide">SÁBADO</span>
               </div>
-              <p className="text-amber-400 font-semibold text-sm mb-1.5">Talento y Público General</p>
+              <p className="text-amber-400 font-semibold text-sm mb-1.5">Abierto a todo público</p>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Estudiantes, emprendedores, docentes, familias, profesionales, curiosos y comunidad general.
+                Evento abierto a toda la comunidad. Incluye{' '}
+                <span className="text-amber-300 font-medium">espacios exclusivos para talento, proyectos y emprendedores</span>
+                {' '}— muestra de proyectos finalistas, talleres prácticos, pitch ante jurados y premiación.
               </p>
             </div>
           </div>
@@ -706,8 +710,8 @@ function EstructuraSection() {
             }`}
           >
             {active === 'dia1'
-              ? '🎯 Empresas, instituciones y alianzas — Horario 8:00 AM a 7:00 PM. Público: empresarios, Cámara de Comercio, universidades, gremios y directivos.'
-              : '🚀 Talento, jóvenes y público general — Horario 8:30 AM a 7:30 PM. Público: estudiantes, emprendedores, docentes, familias y profesionales.'}
+              ? '🎯 Abierto a todo público · Horario 8:00 AM – 7:00 PM. Incluye espacios exclusivos para empresas: paneles, taller empresarial, rueda de conexión y networking con patrocinadores.'
+              : '🚀 Abierto a todo público · Horario 8:30 AM – 7:30 PM. Incluye espacios exclusivos para talento: muestra de proyectos, talleres, pitch ante jurados y premiación.'}
           </div>
         </Reveal>
 
@@ -748,8 +752,8 @@ function EstructuraSection() {
             }`}
           >
             {active === 'dia1'
-              ? 'Objetivo: Las empresas salen con una idea clara de implementar soluciones, ahorrar costos y conectar con talento.'
-              : 'Objetivo: Plataforma para descubrir talento, visibilizar proyectos y conectar jóvenes con empresas.'}
+              ? 'Objetivo: Que empresas e instituciones salgan con ideas claras de implementar soluciones de IA, ahorrar costos y conectar con talento. Abierto a todos.'
+              : 'Objetivo: Plataforma para descubrir talento, visibilizar proyectos y conectar jóvenes con empresas. Abierto a todos.'}
           </p>
         </Reveal>
       </div>
@@ -1215,15 +1219,9 @@ function ContactoSection() {
               <div className="rounded-2xl p-6 bg-[#0a1628] border border-slate-700/50">
                 <p className="text-slate-600 text-xs uppercase tracking-wider font-bold mb-6">Organizado por</p>
                 <div className="flex flex-wrap items-center gap-8">
-                  <div className="flex flex-col items-center gap-2">
-                    <img src="/assets/images/logo-clap.png" alt="CLAP" className="h-10 md:h-12 w-auto" />
-                    <p className="text-slate-600 text-[10px] uppercase tracking-tighter">CLAP</p>
-                  </div>
+                  <img src="/assets/images/logo-clap.png" alt="CLAP" className="h-10 md:h-12 w-auto" />
                   <div className="text-slate-700 text-2xl font-light">×</div>
-                  <div className="flex flex-col items-center gap-2">
-                    <img src="/assets/images/logo-bigdatia.png" alt="BIGDATIA" className="h-10 md:h-12 w-auto" />
-                    <p className="text-slate-600 text-[10px] uppercase tracking-tighter">BIGDATIA</p>
-                  </div>
+                  <img src="/assets/images/logo-bigdatia.png" alt="BIGDATIA" className="h-10 md:h-12 w-auto" />
                   <div className="ml-auto border-l border-slate-800 pl-6 hidden sm:block">
                     <p className="text-slate-300 text-sm font-semibold">Bucaramanga, Santander</p>
                     <p className="text-slate-600 text-xs mt-0.5">Colombia · 2026</p>
