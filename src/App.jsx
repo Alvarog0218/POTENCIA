@@ -1222,9 +1222,9 @@ function ContactoSection() {
                   <img src="/assets/images/logo-clap.png" alt="CLAP" className="h-10 md:h-12 w-auto" />
                   <div className="text-slate-700 text-2xl font-light">×</div>
                   <img src="/assets/images/logo-bigdatia.png" alt="BIGDATIA" className="h-10 md:h-12 w-auto" />
-                  <div className="ml-auto border-l border-slate-800 pl-6 hidden sm:block">
-                    <p className="text-slate-300 text-sm font-semibold">Bucaramanga, Santander</p>
-                    <p className="text-slate-600 text-xs mt-0.5">Colombia · 2026</p>
+                  <div className="w-full sm:w-auto border-t sm:border-t-0 sm:border-l border-slate-800 pt-6 sm:pt-0 sm:pl-6">
+                    <p className="text-slate-300 text-sm font-semibold text-left">Bucaramanga, Santander</p>
+                    <p className="text-slate-600 text-xs mt-0.5 text-left">Colombia · 2026</p>
                   </div>
                 </div>
               </div>
