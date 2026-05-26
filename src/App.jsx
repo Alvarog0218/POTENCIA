@@ -409,7 +409,7 @@ function PorQueSection() {
           <div className="text-center mb-14">
             <span className="text-amber-400 text-xs font-bold tracking-[0.22em] uppercase">El diferencial</span>
             <h2 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl mt-3">
-              ¿POR QUÉ POTENC<span className="text-cyan-400">IA</span>?
+              ¿POR QUÉ POTENC<span className="text-cyan-400">IA</span> 2026?
             </h2>
           </div>
         </Reveal>
