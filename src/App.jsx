@@ -98,11 +98,12 @@ function Counter({ end, prefix = '', suffix = '', duration = 1600 }) {
 
 const NAV_LINKS = [
   { href: '#impacto', label: 'Impacto' },
-  { href: '#categorias', label: 'Categorías' },
+  { href: '#por-que', label: 'Experiencias' },
+  { href: '#categorias', label: 'Ejes' },
   { href: '#estructura', label: 'Agenda' },
-  { href: '#patrocinio', label: 'Patrocinio' },
+  { href: '#zonas', label: 'Feria' },
   { href: '#convocatoria', label: 'Convocatoria' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '#contacto', label: 'Inscripción' },
 ];
 
 function Nav() {
@@ -150,7 +151,7 @@ function Nav() {
               href="#patrocinio"
               className="ml-4 px-5 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold text-sm rounded-lg transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30"
             >
-              Ser Aliado
+              Ser aliado
             </a>
           </div>
 
@@ -183,7 +184,7 @@ function Nav() {
             onClick={() => setOpen(false)}
             className="block mt-2 px-4 py-3 bg-cyan-500 text-slate-900 font-bold rounded-lg text-center"
           >
-            Quiero ser Aliado
+            Ser aliado
           </a>
         </div>
       )}
@@ -212,7 +213,7 @@ function Hero() {
         {/* Live badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/25 bg-cyan-500/8 text-cyan-300 text-sm font-medium mb-10">
           <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-          Bucaramanga, Santander · Colombia · 2026
+          29 y 30 de oct · Universidad Autónoma de Bucaramanga
         </div>
 
         {/* Main title */}
@@ -227,42 +228,38 @@ function Hero() {
 
         {/* Tagline */}
         <p className="text-xl sm:text-2xl text-slate-400 max-w-2xl mx-auto mt-7 mb-3 leading-relaxed">
-          Feria de Inteligencia Artificial, Empresa y Talento
+          Tecnología, ingeniería y talento para transformar la región
         </p>
-        <div className="flex items-center justify-center gap-6 mt-4 mb-12">
-          <p className="text-sm text-slate-600 uppercase tracking-widest font-medium">
-            Organizado por
-          </p>
-          <div className="flex items-center gap-8">
-            <img src="/assets/images/logo-clap.png" alt="CLAP Logo" className="h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity" />
-            <div className="w-px h-6 bg-slate-800" />
-            <img src="/assets/images/logo-bigdatia.png" alt="BIGDATIA Logo" className="h-8 md:h-10 w-auto opacity-80 hover:opacity-100 transition-opacity" />
-          </div>
-        </div>
+        <p className="text-lg text-slate-500 max-w-3xl mx-auto mt-4 mb-10 leading-relaxed">
+          Dos días para aprender, experimentar y conectar con quienes están impulsando la innovación tecnológica en Santander. En el marco de la Semana de la Ingeniería de la UNAB.
+        </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#patrocinio"
+            href="#contacto"
             className="group inline-flex items-center justify-center gap-2 px-9 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold text-lg rounded-xl transition-all shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5"
           >
-            Quiero ser Patrocinador
+            Inscríbete al evento
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="#convocatoria"
+            href="#estructura"
             className="inline-flex items-center justify-center gap-2 px-9 py-4 border border-slate-600 hover:border-cyan-500/40 text-slate-300 hover:text-white font-semibold text-lg rounded-xl transition-all hover:bg-white/5"
           >
-            Quiero participar con mi proyecto
+            Conoce la agenda
           </a>
         </div>
 
         {/* Format pills */}
         <div className="mt-16 flex flex-wrap justify-center gap-3">
           {[
-            { icon: <CalendarDays className="w-4 h-4" />, text: 'Viernes · Empresas e Instituciones' },
-            { icon: <Users className="w-4 h-4" />, text: 'Sábado · Talento y Público General' },
-            { icon: <MonitorPlay className="w-4 h-4" />, text: 'Transmisión en vivo' },
+            { icon: <Megaphone className="w-4 h-4" />, text: 'Conferencias' },
+            { icon: <MessageCircle className="w-4 h-4" />, text: 'Paneles' },
+            { icon: <Briefcase className="w-4 h-4" />, text: 'Talleres' },
+            { icon: <Sparkles className="w-4 h-4" />, text: 'Feria' },
+            { icon: <Network className="w-4 h-4" />, text: 'Negocios' },
+            { icon: <Rocket className="w-4 h-4" />, text: 'Talento' },
           ].map((item, i) => (
             <div
               key={i}
@@ -290,12 +287,11 @@ function Hero() {
 
 function ImpactoSection() {
   const stats = [
-    { end: 2, suffix: ' días', label: 'de evento principal', color: 'cyan', dur: 800 },
-    { end: 500, prefix: '+', label: 'asistentes esperados', color: 'cyan', dur: 2000 },
-    { end: 20, prefix: '+', label: 'proyectos de IA seleccionados', color: 'amber', dur: 1200 },
-    { end: 4, suffix: ' semanas', label: 'de mentorías intensivas previas', color: 'amber', dur: 1000 },
-    { end: 2, label: 'audiencias diferenciadas', color: 'cyan', dur: 600 },
-    { end: 7, label: 'categorías de reconocimiento', color: 'amber', dur: 900 },
+    { end: 2, label: 'días de programación', color: 'cyan', dur: 800 },
+    { end: 5, label: 'bloques de talleres', color: 'cyan', dur: 1500 },
+    { end: 3, label: 'paneles temáticos', color: 'amber', dur: 1000 },
+    { end: 2, label: 'conferencias magistrales', color: 'cyan', dur: 800 },
+    { end: 1, label: 'rueda de negocios', color: 'amber', dur: 500 },
   ];
 
   return (
@@ -305,12 +301,12 @@ function ImpactoSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">El escenario</span>
+            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">PotencIA en cifras</span>
             <h2 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl mt-3">
-              IMPACTO ESPERADO
+              UNA PROGRAMACIÓN HECHA PARA CONECTAR
             </h2>
             <p className="text-slate-500 mt-4 max-w-xl mx-auto">
-              Dos días que conectan talento, empresas, instituciones y comunidad alrededor de la inteligencia artificial en Santander.
+              El evento combina conocimiento, experimentación y oportunidades de relacionamiento en una agenda de dos días.
             </p>
           </div>
         </Reveal>
@@ -371,35 +367,17 @@ function ImpactoSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   03 · ¿Por qué POTENC<span className="text-cyan-400">IA</span>?
+   03 · Experiencias
 ───────────────────────────────────────────────────────────────── */
 
 function PorQueSection() {
   const reasons = [
-    {
-      icon: <Zap className="w-7 h-7" />,
-      color: 'cyan',
-      title: 'No solo hablamos de IA',
-      desc: 'Convocamos talento real, fortalecemos proyectos durante 4 semanas y los conectamos con empresas e instituciones que necesitan esas soluciones.',
-    },
-    {
-      icon: <Target className="w-7 h-7" />,
-      color: 'amber',
-      title: 'Proyectos preparados, no improvisados',
-      desc: 'Cada equipo seleccionado pasa por diagnóstico, MVP, modelo de negocio y pitch antes del evento. Llegan listos para cerrar deals.',
-    },
-    {
-      icon: <Network className="w-7 h-7" />,
-      color: 'cyan',
-      title: 'Conexión real entre sectores',
-      desc: 'Rueda de conexión empresarial, pitch ante jurados y empresas, networking estructurado con patrocinadores y aliados clave.',
-    },
-    {
-      icon: <Globe className="w-7 h-7" />,
-      color: 'amber',
-      title: 'Plataforma regional con impacto duradero',
-      desc: 'Bucaramanga como capital de la innovación IA en Colombia. Postevento digital de 7 a 15 días con contenido, cápsulas e informe de impacto.',
-    },
+    { icon: <Megaphone className="w-7 h-7" />, color: 'cyan', title: 'Conferencias magistrales', desc: 'Perspectivas sobre competitividad regional, convergencia tecnológica y futuro de la ingeniería.' },
+    { icon: <MessageCircle className="w-7 h-7" />, color: 'amber', title: 'Paneles y conversatorios', desc: 'Diálogos entre academia, empresas, instituciones y especialistas sobre retos de la región.' },
+    { icon: <Briefcase className="w-7 h-7" />, color: 'cyan', title: 'Talleres prácticos', desc: 'Sesiones simultáneas para explorar herramientas, metodologías y aplicaciones tecnológicas.' },
+    { icon: <Sparkles className="w-7 h-7" />, color: 'amber', title: 'Feria de Experiencias', desc: 'Demostraciones de productos, servicios, prototipos y desarrollos de empresas y grupos académicos.' },
+    { icon: <Handshake className="w-7 h-7" />, color: 'cyan', title: 'Networking y negocios', desc: 'Conexiones entre talento, empresas, emprendimientos, investigadores e instituciones.' },
+    { icon: <Rocket className="w-7 h-7" />, color: 'amber', title: 'Final de innovación', desc: 'Presentación y premiación de los proyectos seleccionados en la convocatoria PotencIA 2026.' },
   ];
 
   return (
@@ -407,29 +385,20 @@ function PorQueSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-14">
-            <span className="text-amber-400 text-xs font-bold tracking-[0.22em] uppercase">El diferencial</span>
+            <span className="text-amber-400 text-xs font-bold tracking-[0.22em] uppercase">Un evento, múltiples experiencias</span>
             <h2 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl mt-3">
-              ¿POR QUÉ POTENC<span className="text-cyan-400">IA</span> 2026?
+              CONOCIMIENTO QUE SE CONVIERTE EN ACCIÓN
             </h2>
           </div>
         </Reveal>
 
-        {/* Quote block */}
         <Reveal>
-          <div className="relative mb-14 rounded-2xl p-8 md:p-12 bg-[#0a1628] border border-cyan-500/20 overflow-hidden">
-            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-transparent" />
-            <div className="absolute right-0 top-0 w-72 h-72 bg-cyan-500/4 rounded-full blur-3xl" />
-            <p className="text-xl md:text-2xl lg:text-3xl font-display font-bold text-white leading-tight relative z-10">
-              "Mientras otros eventos solo llevan speakers, nosotros podemos decir:{' '}
-              <span className="text-cyan-400">
-                No solo hablamos de inteligencia artificial. Convocamos talento, fortalecemos proyectos y conectamos soluciones reales con empresas e instituciones que las necesitan."
-              </span>
-            </p>
-            <p className="text-slate-600 text-sm mt-5">— Propuesta Estratégica POTENC<span className="text-cyan-400">IA</span> 2026</p>
-          </div>
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto text-center mb-14">
+            PotencIA Santander integra espacios para descubrir tendencias, aprender haciendo, conocer soluciones y crear nuevas oportunidades.
+          </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {reasons.map((r, i) => (
             <Reveal key={i} delay={i * 80}>
               <div
@@ -475,31 +444,10 @@ const CAT_COLORS = {
 
 function CategoriasSection() {
   const cats = [
-    {
-      icon: <Briefcase className="w-8 h-8" />, color: 'cyan',
-      name: 'IA para Empresas',
-      items: ['Ventas y atención al cliente', 'Productividad y automatización', 'Análisis de datos e inventarios', 'Procesos internos'],
-    },
-    {
-      icon: <Shield className="w-8 h-8" />, color: 'blue',
-      name: 'IA para Seguridad',
-      items: ['Videovigilancia inteligente', 'Control de accesos con IA', 'Alertas y monitoreo en tiempo real', 'Análisis de riesgos'],
-    },
-    {
-      icon: <GraduationCap className="w-8 h-8" />, color: 'amber',
-      name: 'IA para Educación',
-      items: ['Tutores virtuales', 'Personalización del aprendizaje', 'Apoyo docente y evaluación', 'Reducción de deserción'],
-    },
-    {
-      icon: <Landmark className="w-8 h-8" />, color: 'violet',
-      name: 'IA para Sector Público',
-      items: ['Trámites y servicios ciudadanos', 'Movilidad y salud pública', 'Seguridad ciudadana', 'Gestión documental'],
-    },
-    {
-      icon: <Heart className="w-8 h-8" />, color: 'rose',
-      name: 'IA para Impacto Social',
-      items: ['Empleabilidad e inclusión', 'Medio ambiente', 'Acceso a información', 'Comunidades vulnerables'],
-    },
+    { icon: <Heart className="w-8 h-8" />, color: 'cyan', name: 'Biotecnología', items: ['Salud y bioinnovación', 'Tecnologías asistivas y dispositivos', 'Diagnóstico y alimentos', 'Soluciones centradas en la vida'] },
+    { icon: <Brain className="w-8 h-8" />, color: 'blue', name: 'Inteligencia Artificial', items: ['Datos y automatización', 'Sistemas inteligentes', 'Analítica y ciberseguridad', 'Aplicaciones responsables'] },
+    { icon: <Zap className="w-8 h-8" />, color: 'amber', name: 'Energía y Sostenibilidad', items: ['Transición energética', 'Eficiencia y renovables', 'Tecnología ambiental', 'Territorio y resiliencia'] },
+    { icon: <TrendingUp className="w-8 h-8" />, color: 'violet', name: 'Gestión Empresarial e Innovación', items: ['Productividad y finanzas', 'Transformación digital', 'Procesos y emprendimiento', 'Nuevos modelos de negocio'] },
   ];
 
   return (
@@ -507,17 +455,17 @@ function CategoriasSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Convocatoria de proyectos</span>
+            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Ejes temáticos</span>
             <h2 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl mt-3">
-              5 CATEGORÍAS
+              CUATRO CAMINOS PARA PENSAR EL FUTURO
             </h2>
             <p className="text-slate-500 mt-4 max-w-xl mx-auto">
-              Proyectos que resuelven problemas reales del sector público y privado usando inteligencia artificial.
+              Los contenidos se organizan en cuatro ejes transversales que permiten integrar distintas disciplinas, sectores y aplicaciones.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {cats.map((cat, i) => {
             const c = CAT_COLORS[cat.color];
             return (
@@ -634,60 +582,55 @@ function CaminoSection() {
    06 · Estructura del Evento
 ───────────────────────────────────────────────────────────────── */
 
-const DIA1 = [
-  { time: '8:00 AM', activity: 'Registro, café de bienvenida y apertura de Zona de Experiencias' },
-  { time: '9:00 AM', activity: 'Acto de apertura institucional' },
-  { time: '9:30 AM', activity: 'Conferencia Central: La IA como motor de competitividad regional' },
-  { time: '10:15 AM', activity: 'Panel 1: IA para empresas, productividad y toma de decisiones' },
-  { time: '11:00 AM', activity: 'Recorrido por stands y demostraciones' },
-  { time: '11:30 AM', activity: 'Panel 2: Seguridad con IA para empresas y vigilancia privada' },
-  { time: '12:30 PM', activity: 'Almuerzo / Networking empresarial' },
-  { time: '2:00 PM', activity: 'Taller: Cómo identificar procesos que pueden automatizarse con IA' },
-  { time: '3:00 PM', activity: 'Panel 3: IA en educación, formación y futuro del trabajo' },
-  { time: '4:30 PM', activity: 'RUEDA DE CONEXIÓN: Empresas + Proyectos IA', highlight: true },
-  { time: '5:30 PM', activity: 'Presentación de soluciones IA para empresas y sector público', highlight: true },
-  { time: '6:15 PM', activity: 'Networking con patrocinadores, aliados y equipos seleccionados', highlight: true },
-];
-
-const DIA2 = [
-  { time: '8:30 AM', activity: 'Ingreso, registro y apertura de experiencias' },
-  { time: '9:30 AM', activity: 'Bienvenida del Día de Talento' },
-  { time: '10:00 AM', activity: 'Charla: IA para la vida cotidiana, el estudio y el trabajo' },
-  { time: '11:00 AM', activity: 'MUESTRA DE PROYECTOS FINALISTAS', highlight: true },
-  { time: '12:30 PM', activity: 'Almuerzo / Recorrido libre por stands' },
-  { time: '2:00 PM', activity: 'Taller 1: Cómo usar IA para estudiar, trabajar o emprender' },
-  { time: '3:00 PM', activity: 'Taller 2: Cómo crear una solución con IA sin ser experto en código' },
-  { time: '4:30 PM', activity: 'PITCH DE TALENTOS ante jurados, empresas e instituciones', highlight: true },
-  { time: '5:30 PM', activity: 'Conexión entre proyectos, empresas y entidades públicas', highlight: true },
-  { time: '6:30 PM', activity: 'PREMIACIÓN Y CIERRE DE CONVOCATORIA', highlight: true },
-];
-
 function EstructuraSection() {
   const [active, setActive] = useState('dia1');
-  const schedule = active === 'dia1' ? DIA1 : DIA2;
+  const schedule = active === 'dia1' ? [
+    { time: '8:00 AM', activity: 'Registro, café de bienvenida y apertura de la Feria de Experiencias' },
+    { time: '9:00 AM', activity: 'Apertura institucional de PotencIA Santander 2026' },
+    { time: '9:15 AM', activity: 'Conferencia: De la innovación tecnológica a la competitividad regional' },
+    { time: '10:00 AM', activity: 'Talleres simultáneos (Ruta A: IA y datos, Ruta B: Biotecnología)' },
+    { time: '11:15 AM', activity: 'Panel: Biotecnología para el bienestar y el desarrollo sostenible' },
+    { time: '12:15 PM', activity: 'Almuerzo y networking empresarial' },
+    { time: '2:15 PM', activity: 'Talleres simultáneos (Ruta A: Automatización, Ruta B: Innovación tecnológica)' },
+    { time: '3:15 PM', activity: 'Panel: Empresas que innovan: productividad y transformación digital' },
+    { time: '4:15 PM', activity: 'Talleres simultáneos (Ruta A: Energía, Ruta B: Finanzas y datos)' },
+    { time: '5:30 PM', activity: 'Panel: Energía, sostenibilidad y territorio' },
+  ] : [
+    { time: '8:00 AM', activity: 'Registro, café de bienvenida y apertura de la Feria de Experiencias' },
+    { time: '9:00 AM', activity: 'Bienvenida: Innovación, talento y oportunidades' },
+    { time: '9:15 AM', activity: 'Talleres simultáneos (Ruta A: De necesidad a solución, Ruta B: IA responsable)' },
+    { time: '10:15 AM', activity: 'Conferencia: El futuro de la ingeniería' },
+    { time: '11:15 AM', activity: 'Finalistas: Soluciones con potencial para transformar la región' },
+    { time: '12:30 PM', activity: 'Almuerzo y conexiones del ecosistema PotencIA' },
+    { time: '2:30 PM', activity: 'Rueda de negocios: Conexiones para implementar, escalar y colaborar' },
+    { time: '4:00 PM', activity: 'Talleres simultáneos (Ruta A: Comunicar solución, Ruta B: Prototipo a implementación)' },
+    { time: '5:15 PM', activity: 'Premiación: Reconocimiento al talento y la innovación tecnológica' },
+    { time: '6:15 PM', activity: 'Cierre: Compromisos y próximos pasos' },
+  ];
 
   return (
     <section id="estructura" className="py-24 bg-[#050d1a]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-12">
-            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Agenda</span>
-            <h2 className="font-display font-black text-white text-5xl sm:text-6xl mt-3">
-              ESTRUCTURA DEL EVENTO
+            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Agenda Preliminar</span>
+            <h2 className="font-display font-black text-white text-4xl sm:text-5xl mt-3">
+              DOS DÍAS PARA APRENDER, EXPERIMENTAR Y CONECTAR
             </h2>
+            <p className="text-slate-400 mt-4">La programación integra los tiempos de transición dentro de cada bloque para presentar una agenda más clara y compacta.</p>
           </div>
         </Reveal>
 
         {/* Toggle */}
         <Reveal>
-          <div className="flex rounded-xl overflow-hidden border border-slate-700 max-w-sm mx-auto mb-6">
+          <div className="flex rounded-xl overflow-hidden border border-slate-700 max-w-sm mx-auto mb-10">
             <button
               onClick={() => setActive('dia1')}
               className={`flex-1 py-3 font-display font-bold text-sm transition-all ${
                 active === 'dia1' ? 'bg-cyan-500 text-slate-900' : 'bg-[#0a1628] text-slate-400 hover:text-white'
               }`}
             >
-              DÍA 1 · Viernes
+              DÍA 1 · Jueves 29
             </button>
             <button
               onClick={() => setActive('dia2')}
@@ -695,49 +638,20 @@ function EstructuraSection() {
                 active === 'dia2' ? 'bg-amber-500 text-slate-900' : 'bg-[#0a1628] text-slate-400 hover:text-white'
               }`}
             >
-              DÍA 2 · Sábado
+              DÍA 2 · Viernes 30
             </button>
           </div>
         </Reveal>
 
-        {/* Context note */}
-        <Reveal>
-          <div
-            className={`rounded-xl p-4 mb-5 text-sm border ${
-              active === 'dia1'
-                ? 'bg-cyan-500/8 border-cyan-500/20 text-cyan-300'
-                : 'bg-amber-500/8 border-amber-500/20 text-amber-300'
-            }`}
-          >
-            {active === 'dia1'
-              ? '🎯 Abierto a todo público · Horario 8:00 AM – 7:00 PM. Incluye espacios exclusivos para empresas: paneles, taller empresarial, rueda de conexión y networking con patrocinadores.'
-              : '🚀 Abierto a todo público · Horario 8:30 AM – 7:30 PM. Incluye espacios exclusivos para talento: muestra de proyectos, talleres, pitch ante jurados y premiación.'}
-          </div>
-        </Reveal>
-
         {/* Schedule */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           {schedule.map((item, i) => (
             <Reveal key={`${active}-${i}`} delay={i * 35}>
-              <div
-                className={`flex gap-4 p-4 rounded-xl border transition-colors ${
-                  item.highlight
-                    ? active === 'dia1'
-                      ? 'bg-cyan-500/8 border-cyan-500/20'
-                      : 'bg-amber-500/8 border-amber-500/20'
-                    : 'bg-[#0a1628] border-slate-800'
-                }`}
-              >
-                <span
-                  className={`text-xs font-mono font-bold w-16 flex-shrink-0 mt-0.5 ${
-                    item.highlight
-                      ? active === 'dia1' ? 'text-cyan-400' : 'text-amber-400'
-                      : 'text-slate-600'
-                  }`}
-                >
+              <div className="flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-[#0a1628] border border-slate-800 hover:border-slate-600 transition-colors">
+                <span className={`text-sm font-mono font-bold sm:w-28 flex-shrink-0 mt-0.5 ${active === 'dia1' ? 'text-cyan-400' : 'text-amber-400'}`}>
                   {item.time}
                 </span>
-                <span className={`text-sm ${item.highlight ? 'text-white font-semibold' : 'text-slate-400'}`}>
+                <span className="text-[15px] text-white font-medium">
                   {item.activity}
                 </span>
               </div>
@@ -745,16 +659,10 @@ function EstructuraSection() {
           ))}
         </div>
 
-        <Reveal delay={150}>
-          <p
-            className={`mt-6 text-center text-sm ${
-              active === 'dia1' ? 'text-cyan-500' : 'text-amber-500'
-            }`}
-          >
-            {active === 'dia1'
-              ? 'Objetivo: Que empresas e instituciones salgan con ideas claras de implementar soluciones de IA, ahorrar costos y conectar con talento. Abierto a todos.'
-              : 'Objetivo: Plataforma para descubrir talento, visibilizar proyectos y conectar jóvenes con empresas. Abierto a todos.'}
-          </p>
+        <Reveal>
+          <div className="mt-8 p-4 border-l-4 border-cyan-500 bg-cyan-500/10 text-cyan-100 rounded-r-xl text-sm leading-relaxed text-center sm:text-left">
+            Los temas y nombres de los espacios son preliminares y podrán ajustarse de acuerdo con la confirmación de ponentes, talleristas y aliados.
+          </div>
         </Reveal>
       </div>
     </section>
@@ -762,18 +670,17 @@ function EstructuraSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   07 · Zonas del Evento
+   07 · Feria de Experiencias Tecnológicas
 ───────────────────────────────────────────────────────────────── */
 
 function ZonasSection() {
   const zones = [
-    { icon: <Megaphone className="w-6 h-6" />, name: 'Auditorio Principal', desc: 'Conferencias, paneles y acto de apertura', color: 'cyan' },
-    { icon: <Sparkles className="w-6 h-6" />, name: 'Zona de Experiencias IA', desc: 'Demostraciones en vivo de soluciones', color: 'blue' },
-    { icon: <Briefcase className="w-6 h-6" />, name: 'Zona Empresarial', desc: 'Stands de marcas, empresas y patrocinadores', color: 'amber' },
-    { icon: <Rocket className="w-6 h-6" />, name: 'Zona de Talento', desc: 'Proyectos seleccionados de la convocatoria', color: 'cyan' },
-    { icon: <BookOpen className="w-6 h-6" />, name: 'Sala de Talleres', desc: 'Formación práctica y sesiones premium', color: 'violet' },
-    { icon: <Network className="w-6 h-6" />, name: 'Zona de Networking', desc: 'Reuniones, rueda de negocios y conexiones', color: 'amber' },
-    { icon: <Video className="w-6 h-6" />, name: 'Zona de Contenido', desc: 'Podcast, entrevistas y cápsulas digitales', color: 'rose' },
+    { icon: <Sparkles className="w-6 h-6" />, name: 'Demostraciones', desc: 'Experiencias en vivo, pruebas de concepto, prototipos y aplicaciones tecnológicas.', color: 'cyan' },
+    { icon: <Building2 className="w-6 h-6" />, name: 'Soluciones empresariales', desc: 'Productos y servicios orientados a productividad, transformación digital e innovación.', color: 'amber' },
+    { icon: <GraduationCap className="w-6 h-6" />, name: 'Desarrollos académicos', desc: 'Investigación aplicada, semilleros, laboratorios, proyectos y capacidades universitarias.', color: 'blue' },
+    { icon: <Rocket className="w-6 h-6" />, name: 'Emprendimientos', desc: 'Soluciones emergentes con potencial de crecimiento, implementación y articulación.', color: 'violet' },
+    { icon: <Globe className="w-6 h-6" />, name: 'Innovación sostenible', desc: 'Tecnologías para energía, ambiente, eficiencia y desarrollo territorial.', color: 'rose' },
+    { icon: <MonitorPlay className="w-6 h-6" />, name: 'Experiencias interactivas', desc: 'Activaciones, simulaciones y demostraciones diseñadas para el público general.', color: 'cyan' },
   ];
 
   const iconCls = {
@@ -789,14 +696,14 @@ function ZonasSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Distribución del espacio</span>
+            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Feria de Experiencias Tecnológicas</span>
             <h2 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl mt-3">
-              ZONAS DEL EVENTO
+              TECNOLOGÍA QUE SE PUEDE VER Y VIVIR
             </h2>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {zones.map((z, i) => (
             <Reveal key={i} delay={i * 60}>
               <div className="rounded-xl p-5 bg-[#0a1628] border border-slate-700/50 hover:border-slate-600 hover:-translate-y-1 transition-all duration-300 h-full">
@@ -815,74 +722,31 @@ function ZonasSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   08 · Modelo de Patrocinio
+   08 · Aliados
 ───────────────────────────────────────────────────────────────── */
 
 function PatrocinioSection() {
   const roles = [
     {
-      icon: <Award className="w-7 h-7" />, color: 'amber',
-      title: 'PATROCINADORES',
-      sub: 'Aporte financiero',
-      desc: 'Bancos, Govtech, empresas grandes, gremios, aseguradoras. Garantizan la sostenibilidad económica del evento.',
+      icon: <BookOpen className="w-7 h-7" />, color: 'amber',
+      title: 'Aliado de contenidos',
+      sub: 'Conocimiento',
+      desc: 'Conferencias, paneles, talleres y conocimiento especializado.',
     },
     {
-      icon: <Handshake className="w-7 h-7" />, color: 'cyan',
-      title: 'ALIADOS ESTRATÉGICOS',
-      sub: 'Aporte en especie',
-      desc: 'Sede, conectividad, seguridad, audiovisual, café, impresos, mobiliario. Reducen los costos logísticos críticos.',
+      icon: <Sparkles className="w-7 h-7" />, color: 'cyan',
+      title: 'Aliado de experiencias',
+      sub: 'Demostración',
+      desc: 'Demostraciones, activaciones, productos y experiencias tecnológicas.',
     },
     {
       icon: <Network className="w-7 h-7" />, color: 'violet',
-      title: 'ECOSISTEMA',
-      sub: 'Talento y contenido',
-      desc: 'Universidades, SENA, comunidades tech, empresas de software. Aseguran calidad académica y participación.',
+      title: 'Aliado del ecosistema',
+      sub: 'Conexiones',
+      desc: 'Relacionamiento, convocatoria, rueda de negocios y articulación regional.',
     },
   ];
 
-  const pkgs = [
-    {
-      name: 'Aliado Sede Oficial',
-      value: '$50M – $150M COP',
-      tier: 'platinum',
-      contribution: 'Auditorio, salones, laboratorios, equipos, personal de apoyo, parqueadero, difusión estudiantil.',
-      benefits: ['Logo como Sede Oficial del evento', 'Participación en acto de apertura', 'Stand institucional propio', '20 cupos premium', 'Presencia en toda la comunicación', 'Posibilidad de panel académico', 'Reconocimiento en informe de impacto'],
-    },
-    {
-      name: 'Aliado de Conectividad',
-      value: '$15M – $40M COP',
-      tier: 'gold',
-      contribution: 'Internet dedicado, WiFi oficial, backup, routers, zona de conexión.',
-      benefits: ['WiFi oficial con nombre de marca', 'Logo en landing page y piezas', 'Mención en tarima', 'Stand de activación', 'Base de interés autorizada (si aplica)'],
-    },
-    {
-      name: 'Aliado de Seguridad Inteligente',
-      value: '$15M – $50M COP',
-      tier: 'gold',
-      contribution: 'Personal de seguridad, control de acceso, monitoreo, cámaras, demo de tecnología IA.',
-      benefits: ['Presencia en rama IA y Seguridad', 'Stand propio en feria', 'Participación en panel', 'Demo en vivo durante el evento', 'Contacto con conjuntos y sector público', 'Posibilidad de piloto post-evento'],
-    },
-    {
-      name: 'Aliado Audiovisual',
-      value: '$30M – $80M COP',
-      tier: 'gold',
-      contribution: 'Cámaras, streaming, switcher, grabación, clips, video resumen.',
-      benefits: ['Crédito como Productora Oficial', 'Logo en transmisión en vivo', 'Mención en piezas post-evento', 'Derecho a usar caso en portafolio', 'Presencia en cierres de video'],
-    },
-    {
-      name: 'Aliado de Experiencia',
-      value: '$8M – $40M COP',
-      tier: 'silver',
-      contribution: 'Café, agua, snacks, coctel, almuerzos VIP, zona de hidratación.',
-      benefits: ['Marca en zona de networking', 'Activación propia de marca', 'Logo en piezas del evento', 'Producto en mano de cada asistente', 'Presencia en la Noche del Ecosistema'],
-    },
-  ];
-
-  const tierCls = {
-    platinum: { badge: 'bg-gradient-to-r from-slate-300 to-white text-slate-900', border: 'border-slate-300/25', ring: 'hover:border-slate-300/50' },
-    gold:     { badge: 'bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-900', border: 'border-amber-500/25', ring: 'hover:border-amber-500/50' },
-    silver:   { badge: 'bg-gradient-to-r from-slate-400 to-slate-300 text-slate-900', border: 'border-slate-500/20', ring: 'hover:border-slate-400/40' },
-  };
 
   return (
     <section id="patrocinio" className="py-24 bg-[#050d1a] relative overflow-hidden">
@@ -892,13 +756,13 @@ function PatrocinioSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="text-amber-400 text-xs font-bold tracking-[0.22em] uppercase">Oportunidad de marca</span>
+            <span className="text-amber-400 text-xs font-bold tracking-[0.22em] uppercase">Aliados</span>
             <h2 className="font-display font-black text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-3 leading-tight">
-              TU MARCA, EN EL CENTRO DE<br className="hidden sm:block" />{' '}
-              <span className="text-gradient-amber">LA REVOLUCIÓN IA DE SANTANDER</span>
+              CONSTRUYAMOS JUNTOS<br className="hidden sm:block" />{' '}
+              <span className="text-gradient-amber">EL ECOSISTEMA TECNOLÓGICO</span>
             </h2>
             <p className="text-slate-500 mt-6 max-w-2xl mx-auto text-lg">
-              No estamos vendiendo un espacio publicitario. Estamos invitando a tu marca a construir un ecosistema regional de IA que convoca talento, empresas e instituciones.
+              Las organizaciones aliadas pueden participar mediante contenidos, talleres, experiencias, demostraciones, conexión empresarial o apoyo institucional.
             </p>
           </div>
         </Reveal>
@@ -933,57 +797,89 @@ function PatrocinioSection() {
           ))}
         </div>
 
+
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   08.5 · Públicos (Para quién es el evento)
+───────────────────────────────────────────────────────────────── */
+
+function PublicosSection() {
+  const audiences = [
+    { 
+      icon: <GraduationCap className="w-6 h-6" />, color: 'cyan', 
+      name: 'Estudiantes y egresados', 
+      desc: 'Aprende, participa en talleres y conecta con organizaciones y oportunidades de crecimiento.', 
+      bullets: ['Asistencia a conferencias', 'Talleres prácticos', 'Conexiones con empresas'] 
+    },
+    { 
+      icon: <Briefcase className="w-6 h-6" />, color: 'amber', 
+      name: 'Profesionales e investigadores', 
+      desc: 'Actualiza conocimientos y conversa con especialistas de diferentes disciplinas tecnológicas.', 
+      bullets: ['Paneles especializados', 'Networking de alto nivel', 'Tendencias tecnológicas'] 
+    },
+    { 
+      icon: <Building2 className="w-6 h-6" />, color: 'blue', 
+      name: 'Empresas e instituciones', 
+      desc: 'Conoce soluciones innovadoras, identifica talento y participa en espacios de relacionamiento.', 
+      bullets: ['Identificación de talento', 'Rueda de negocios', 'Actualización empresarial'] 
+    },
+    { 
+      icon: <Rocket className="w-6 h-6" />, color: 'violet', 
+      name: 'Emprendimientos y expositores', 
+      desc: 'Da visibilidad a productos, servicios, prototipos y desarrollos tecnológicos de tu equipo.', 
+      bullets: ['Stand en feria', 'Presentación a inversionistas', 'Feedback de mercado'] 
+    },
+  ];
+
+  const iconCls = {
+    cyan:   'bg-cyan-500/12 text-cyan-400 border-cyan-500/20',
+    blue:   'bg-blue-500/12 text-blue-400 border-blue-500/20',
+    amber:  'bg-amber-500/12 text-amber-400 border-amber-500/20',
+    violet: 'bg-violet-500/12 text-violet-400 border-violet-500/20',
+    rose:   'bg-rose-500/12 text-rose-400 border-rose-500/20',
+  };
+
+  return (
+    <section className="py-24 bg-[#050d1a] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
-          <h3 className="font-display font-black text-white text-3xl sm:text-4xl text-center mb-8">
-            PAQUETES DE PATROCINIO EN ESPECIE
-          </h3>
+          <div className="text-center mb-16">
+            <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Públicos</span>
+            <h2 className="font-display font-black text-white text-4xl sm:text-5xl mt-3">
+              ¿PARA QUIÉN ES EL EVENTO?
+            </h2>
+          </div>
         </Reveal>
 
-        {/* Packages */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {pkgs.map((pkg, i) => {
-            const t = tierCls[pkg.tier];
-            return (
-              <Reveal key={i} delay={i * 70}>
-                <div
-                  className={`rounded-2xl bg-[#0a1628] border p-6 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50 ${t.border} ${t.ring}`}
-                >
-                  <div className="flex items-start justify-between gap-2 mb-4">
-                    <h4 className="font-display font-black text-white text-xl leading-tight">{pkg.name}</h4>
-                    <span className={`flex-shrink-0 text-[11px] font-black px-2.5 py-1 rounded-full uppercase ${t.badge}`}>
-                      {pkg.tier}
-                    </span>
-                  </div>
-
-                  <div className="font-display font-black text-2xl text-gradient-amber mb-4">{pkg.value}</div>
-
-                  <div className="rounded-lg p-3 mb-4 bg-white/4 border border-white/8">
-                    <p className="text-xs text-slate-600 uppercase tracking-wider font-bold mb-1">Aporta</p>
-                    <p className="text-slate-400 text-sm leading-relaxed">{pkg.contribution}</p>
-                  </div>
-
-                  <div className="flex-1">
-                    <p className="text-xs text-slate-600 uppercase tracking-wider font-bold mb-2">Recibe</p>
-                    <ul className="space-y-1.5">
-                      {pkg.benefits.map((b, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-slate-400">
-                          <CheckCircle2 className="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <a
-                    href="#contacto"
-                    className="mt-5 block text-center py-2.5 rounded-lg border border-cyan-500/25 text-cyan-400 text-sm font-semibold hover:bg-cyan-500/8 hover:border-cyan-500/50 transition-all"
-                  >
-                    Quiero ser aliado →
-                  </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {audiences.map((aud, i) => (
+            <Reveal key={i} delay={i * 60}>
+              <div className="rounded-xl p-6 bg-[#0a1628] border border-slate-700/50 hover:border-slate-600 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-5 ${iconCls[aud.color]}`}>
+                  {aud.icon}
                 </div>
-              </Reveal>
-            );
-          })}
+                
+                <h3 className="font-display font-bold text-white text-xl leading-tight mb-3">{aud.name}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-6">{aud.desc}</p>
+                
+                <div className="mt-auto pt-5 border-t border-slate-800/60">
+                  <p className="text-[11px] text-slate-500 uppercase tracking-wider font-bold mb-3">Qué encontrarás</p>
+                  <ul className="space-y-2">
+                    {aud.bullets.map((b, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-slate-300">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-500/70 mt-0.5 flex-shrink-0" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
@@ -1114,7 +1010,7 @@ function PremiosSection() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {awards.map((a, i) => (
             <Reveal key={i} delay={i * 55}>
               <div
@@ -1152,7 +1048,7 @@ function PremiosSection() {
 ───────────────────────────────────────────────────────────────── */
 
 function ContactoSection() {
-  const [form, setForm] = useState({ nombre: '', empresa: '', email: '', tipo: 'patrocinador', mensaje: '' });
+  const [form, setForm] = useState({ nombre: '', empresa: '', email: '', whatsapp: '', tipo: 'patrocinador', mensaje: '', autorizaDatos: false });
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
@@ -1177,16 +1073,18 @@ function ContactoSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left: CTA cards + organizers */}
-          <Reveal>
-            <div className="space-y-5">
+          <Reveal className="h-full">
+            <div className="flex flex-col justify-between h-full space-y-5">
               {/* Sponsor CTA */}
               <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-500/8 to-amber-500/3 border border-amber-500/20">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center mb-4">
-                  <Award className="w-6 h-6" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 shrink-0 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-display font-bold text-white text-xl leading-tight">¿Quieres ser patrocinador o aliado?</h3>
                 </div>
-                <h3 className="font-display font-bold text-white text-2xl mb-2">¿Quieres ser patrocinador o aliado?</h3>
                 <p className="text-slate-500 text-sm mb-5 leading-relaxed">
-                  Hay categorías disponibles en sede, conectividad, seguridad, audiovisual, experiencia y más. Construye tu posición en el ecosistema IA de Santander.
+                  Las organizaciones aliadas pueden participar mediante contenidos, talleres, experiencias, demostraciones, conexión empresarial o apoyo institucional.
                 </p>
                 <a
                   href="mailto:contacto@potenciaia.co"
@@ -1199,12 +1097,14 @@ function ContactoSection() {
 
               {/* Project CTA */}
               <div className="rounded-2xl p-6 bg-gradient-to-br from-cyan-500/8 to-cyan-500/3 border border-cyan-500/20">
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center mb-4">
-                  <Rocket className="w-6 h-6" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 shrink-0 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center">
+                    <Rocket className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-display font-bold text-white text-xl leading-tight">¿Tienes un proyecto con IA?</h3>
                 </div>
-                <h3 className="font-display font-bold text-white text-2xl mb-2">¿Tienes un proyecto con IA?</h3>
                 <p className="text-slate-500 text-sm mb-5 leading-relaxed">
-                  Inscribe tu proyecto en la convocatoria. Si tiene potencial lo seleccionamos y te acompañamos con mentorías hasta el evento.
+                  La fase final y la premiación de la convocatoria PotencIA 2026 se realizarán durante el evento. Los proyectos seleccionados accederán a un proceso previo y presentarán sus soluciones.
                 </p>
                 <a
                   href="#contacto"
@@ -1232,8 +1132,8 @@ function ContactoSection() {
           </Reveal>
 
           {/* Right: Contact form */}
-          <Reveal delay={100}>
-            <div className="rounded-2xl bg-[#0a1628] border border-slate-700/50 p-8">
+          <Reveal delay={100} className="h-full">
+            <div className="rounded-2xl bg-[#0a1628] border border-slate-700/50 p-8 h-full flex flex-col justify-center">
               {sent ? (
                 <div className="text-center py-14">
                   <div className="w-16 h-16 rounded-full bg-cyan-500/15 text-cyan-400 flex items-center justify-center mx-auto mb-5">
@@ -1250,7 +1150,9 @@ function ContactoSection() {
                 </div>
               ) : (
                 <>
-                  <h3 className="font-display font-bold text-white text-2xl mb-6">Envíanos un mensaje</h3>
+                  <h3 className="font-display font-black text-white text-2xl sm:text-3xl mb-6 leading-tight">
+                    Recibe información<br />sobre PotencIA 2026
+                  </h3>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
@@ -1275,16 +1177,28 @@ function ContactoSection() {
                         />
                       </div>
                     </div>
-                    <div>
-                      <label className="block text-slate-500 text-xs uppercase tracking-wider font-bold mb-1.5">Email *</label>
-                      <input
-                        type="email"
-                        required
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full bg-[#050d1a] border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-700 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                        placeholder="tu@correo.com"
-                      />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-slate-500 text-xs uppercase tracking-wider font-bold mb-1.5">Email *</label>
+                        <input
+                          type="email"
+                          required
+                          value={form.email}
+                          onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          className="w-full bg-[#050d1a] border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-700 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                          placeholder="tu@correo.com"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-slate-500 text-xs uppercase tracking-wider font-bold mb-1.5">WhatsApp</label>
+                        <input
+                          type="tel"
+                          value={form.whatsapp}
+                          onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
+                          className="w-full bg-[#050d1a] border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-700 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                          placeholder="Ej: +57 300 000 0000"
+                        />
+                      </div>
                     </div>
                     <div>
                       <label className="block text-slate-500 text-xs uppercase tracking-wider font-bold mb-1.5">Soy...</label>
@@ -1303,13 +1217,30 @@ function ContactoSection() {
                     <div>
                       <label className="block text-slate-500 text-xs uppercase tracking-wider font-bold mb-1.5">Mensaje</label>
                       <textarea
-                        rows={4}
+                        rows={3}
                         value={form.mensaje}
                         onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
                         className="w-full bg-[#050d1a] border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-700 focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
                         placeholder="Cuéntanos sobre tu interés en POTENCIA 2026..."
                       />
                     </div>
+                    
+                    <div className="flex items-start gap-3 mt-4 mb-2">
+                      <div className="flex items-center h-5 mt-0.5">
+                        <input
+                          id="autorizaDatos"
+                          type="checkbox"
+                          required
+                          checked={form.autorizaDatos}
+                          onChange={(e) => setForm({ ...form, autorizaDatos: e.target.checked })}
+                          className="w-4 h-4 border border-slate-700 rounded bg-[#050d1a] focus:ring-cyan-500 focus:ring-offset-0 text-cyan-500 cursor-pointer"
+                        />
+                      </div>
+                      <label htmlFor="autorizaDatos" className="text-slate-400 text-xs leading-relaxed cursor-pointer">
+                        Autorizo el tratamiento de mis datos personales para ser contactado y recibir información sobre PotencIA 2026 y temas relacionados.
+                      </label>
+                    </div>
+
                     <button
                       type="submit"
                       className="w-full py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold text-lg rounded-xl transition-all shadow-lg shadow-cyan-500/15 hover:shadow-cyan-500/30 hover:-translate-y-0.5"
@@ -1354,7 +1285,7 @@ function Footer() {
 
           <div className="text-right flex flex-col items-center md:items-end">
             <p className="text-slate-700 text-sm">
-              Feria de Inteligencia Artificial, Empresa y Talento
+              Tecnología, ingeniería y talento para transformar la región
             </p>
             <p className="text-slate-800 text-[10px] uppercase tracking-widest mt-1">
               Bucaramanga · Santander · Colombia
@@ -1418,12 +1349,12 @@ export default function App() {
       <ImpactoSection />
       <PorQueSection />
       <CategoriasSection />
-      <CaminoSection />
+{/* <CaminoSection /> */}
       <EstructuraSection />
       <ZonasSection />
-      <PatrocinioSection />
+      <PublicosSection />
       <ConvocatoriaSection />
-      <PremiosSection />
+      <PatrocinioSection />
       <ContactoSection />
       <Footer />
       <ScrollToTop />

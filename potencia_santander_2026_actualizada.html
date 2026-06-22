@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PotencIA Santander 2026: tecnología, ingeniería, innovación y talento. 29 y 30 de octubre de 2026 en la Universidad Autónoma de Bucaramanga, en el marco de la Semana de la Ingeniería." />
+  <title>PotencIA Santander 2026 | Tecnología, Ingeniería e Innovación</title>
+  <style>
+    :root{
+      --bg:#06101f;
+      --bg-2:#09172b;
+      --card:#0d1d33;
+      --card-2:#10233e;
+      --line:rgba(255,255,255,.10);
+      --text:#f7fbff;
+      --muted:#9fb0c5;
+      --cyan:#31d7f4;
+      --blue:#4c8dff;
+      --green:#64df9e;
+      --amber:#ffca68;
+      --violet:#b899ff;
+      --max:1180px;
+      --radius:22px;
+      --shadow:0 28px 70px rgba(0,0,0,.32);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(49,215,244,.10), transparent 28rem),
+        radial-gradient(circle at 90% 25%, rgba(76,141,255,.08), transparent 24rem),
+        var(--bg);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(var(--max), calc(100% - 32px));margin:auto}
+    .section{padding:96px 0;position:relative}
+    .section.alt{background:rgba(255,255,255,.018)}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      color:var(--cyan);font-weight:800;text-transform:uppercase;
+      letter-spacing:.16em;font-size:.78rem;
+    }
+    .eyebrow::before{content:"";width:28px;height:2px;background:currentColor;border-radius:999px}
+    h1,h2,h3{font-family:"Arial Narrow", Impact, ui-sans-serif, system-ui, sans-serif;line-height:1.03;margin:0}
+    h1{font-size:clamp(3.8rem,10vw,8.2rem);letter-spacing:-.045em}
+    h2{font-size:clamp(2.35rem,6vw,5rem);letter-spacing:-.035em}
+    h3{font-size:1.35rem;letter-spacing:-.015em}
+    p{margin:0}
+    .lead{font-size:clamp(1.08rem,2vw,1.35rem);color:var(--muted);max-width:760px}
+    .section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:40px}
+    .section-head p{max-width:650px;color:var(--muted)}
+    .accent{color:var(--cyan)}
+    .muted{color:var(--muted)}
+
+    nav{
+      position:fixed;inset:0 0 auto;z-index:100;
+      background:rgba(6,16,31,.86);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:1.45rem;font-weight:950;letter-spacing:-.04em;display:flex;align-items:center;gap:10px}
+    .brand-mark{
+      width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(49,215,244,.24),rgba(76,141,255,.18));
+      border:1px solid rgba(49,215,244,.3);
+    }
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{padding:10px 12px;color:#c7d3e2;font-size:.9rem;border-radius:10px}
+    .nav-links a:hover{background:rgba(255,255,255,.06);color:white}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 22px;border-radius:13px;font-weight:850;border:1px solid transparent;
+      transition:.2s ease;cursor:pointer;
+    }
+    .btn.primary{background:var(--cyan);color:#03101c;box-shadow:0 10px 30px rgba(49,215,244,.20)}
+    .btn.primary:hover{transform:translateY(-2px);background:#74e8fa}
+    .btn.secondary{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.035);color:white}
+    .btn.secondary:hover{border-color:rgba(49,215,244,.55);background:rgba(49,215,244,.07)}
+    .btn.small{padding:10px 16px;font-size:.9rem}
+
+    .hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 80px;overflow:hidden;position:relative}
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:46px 46px;
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 82%);
+    }
+    .hero-content{position:relative;z-index:2;text-align:center;max-width:980px}
+    .event-pill{
+      display:inline-flex;align-items:center;gap:10px;padding:9px 15px;border-radius:999px;
+      border:1px solid rgba(49,215,244,.28);background:rgba(49,215,244,.08);
+      color:#bff6ff;font-size:.88rem;margin-bottom:24px;
+    }
+    .hero h1 span{display:block}
+    .hero h1 .year{font-size:.54em;color:#d7e0ec;letter-spacing:.13em;margin-top:4px}
+    .hero-subtitle{font-size:clamp(1.35rem,3vw,2rem);font-weight:800;color:#dfe8f4;margin-top:26px}
+    .hero-copy{max-width:760px;margin:16px auto 0;color:var(--muted);font-size:1.08rem}
+    .hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px 0 34px}
+    .chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#d6e0ed;font-size:.9rem}
+    .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+    .hero-foot{margin-top:30px;color:#7f92aa;font-size:.9rem}
+
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .stat,.card{
+      background:linear-gradient(180deg,rgba(16,35,62,.95),rgba(10,25,45,.95));
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+    .stat{padding:26px}
+    .stat strong{display:block;font-size:2.35rem;line-height:1;color:var(--cyan)}
+    .stat span{display:block;color:var(--muted);font-size:.9rem;margin-top:8px}
+
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{padding:26px}
+    .card-icon{
+      width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+      margin-bottom:18px;font-size:1.4rem;background:rgba(49,215,244,.10);border:1px solid rgba(49,215,244,.25)
+    }
+    .card p{color:var(--muted);margin-top:10px;font-size:.96rem}
+    .card ul{padding-left:18px;color:var(--muted);margin:14px 0 0}
+    .axis-card{min-height:245px;position:relative;overflow:hidden}
+    .axis-card::after{
+      content:"";position:absolute;right:-55px;bottom:-55px;width:150px;height:150px;border-radius:50%;
+      background:radial-gradient(circle,rgba(49,215,244,.14),transparent 65%);
+    }
+    .axis-card:nth-child(2) .card-icon{background:rgba(184,153,255,.11);border-color:rgba(184,153,255,.24)}
+    .axis-card:nth-child(3) .card-icon{background:rgba(100,223,158,.10);border-color:rgba(100,223,158,.24)}
+    .axis-card:nth-child(4) .card-icon{background:rgba(255,202,104,.10);border-color:rgba(255,202,104,.26)}
+
+    .agenda-tabs{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+    .agenda-tabs button{
+      border:1px solid var(--line);background:var(--card);color:var(--muted);
+      padding:12px 18px;border-radius:12px;font-weight:850;cursor:pointer
+    }
+    .agenda-tabs button.active{background:var(--cyan);color:#04111e;border-color:var(--cyan)}
+    .agenda-day{display:none}
+    .agenda-day.active{display:block}
+    .agenda-list{display:grid;gap:12px}
+    .agenda-item{
+      display:grid;grid-template-columns:130px 210px 1fr;gap:20px;align-items:start;
+      padding:20px 22px;background:rgba(13,29,51,.88);border:1px solid var(--line);border-radius:16px;
+    }
+    .agenda-time{font-weight:900;color:var(--cyan)}
+    .agenda-type{text-transform:uppercase;letter-spacing:.10em;font-size:.78rem;color:#d6e2ef;font-weight:900}
+    .agenda-title{font-weight:900;font-size:1.08rem}
+    .agenda-desc{color:var(--muted);font-size:.93rem;margin-top:5px}
+    .agenda-note{
+      margin-top:18px;padding:15px 18px;border-left:3px solid var(--cyan);
+      background:rgba(49,215,244,.06);color:#c9d8e7;border-radius:0 12px 12px 0;font-size:.92rem
+    }
+
+    .spaces .card{min-height:205px}
+    .audiences .card{min-height:210px}
+
+    .callout{
+      padding:34px;border:1px solid rgba(49,215,244,.25);border-radius:24px;
+      background:linear-gradient(135deg,rgba(49,215,244,.10),rgba(76,141,255,.05));
+      display:grid;grid-template-columns:1.5fr auto;gap:30px;align-items:center
+    }
+    .callout p{color:#c8d6e6;margin-top:8px}
+
+    .form-card{
+      background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;
+      max-width:900px;margin:0 auto
+    }
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    label{display:grid;gap:7px;color:#dce6f2;font-size:.9rem;font-weight:750}
+    input,select,textarea{
+      width:100%;padding:14px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.13);
+      background:#081526;color:white;outline:none
+    }
+    input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(49,215,244,.08)}
+    textarea{min-height:120px;resize:vertical}
+    .full{grid-column:1/-1}
+    .form-help{color:#7f91a8;font-size:.85rem;margin-top:14px}
+
+    footer{border-top:1px solid var(--line);padding:40px 0 28px;background:#040b16}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:28px}
+    footer p,footer a{color:#8ea0b7;font-size:.92rem}
+    .footer-title{font-weight:900;color:white;margin-bottom:8px}
+    .copyright{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-size:.85rem;color:#6e8199}
+
+    .mobile-toggle{display:none;background:none;border:0;color:white;font-size:1.5rem}
+    @media (max-width:980px){
+      .nav-links{display:none}
+      .mobile-toggle{display:block}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .agenda-item{grid-template-columns:110px 1fr}
+      .agenda-item > div:last-child{grid-column:2}
+      .callout{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:660px){
+      .section{padding:72px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:16px}
+      .grid-4,.grid-3,.grid-2,.form-grid,.footer-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .agenda-item{grid-template-columns:1fr;gap:8px}
+      .agenda-item > div:last-child{grid-column:auto}
+      .agenda-time{font-size:.95rem}
+      .hero{padding-top:110px}
+      .btn{width:100%}
+      .hero-actions{display:grid}
+      .full{grid-column:auto}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">⚡</span>
+        <span>POTENC<span class="accent">IA</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#experiencias">Experiencias</a>
+        <a href="#ejes">Ejes</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#feria">Feria</a>
+        <a href="#convocatoria">Convocatoria</a>
+        <a href="#inscripcion">Inscripción</a>
+        <a href="#aliados" class="btn small secondary">Ser aliado</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="container hero-content">
+      <div class="event-pill">29 y 30 de octubre de 2026 · Universidad Autónoma de Bucaramanga</div>
+      <h1>
+        <span>POTENC<span class="accent">IA</span></span>
+        <span class="year">SANTANDER 2026</span>
+      </h1>
+      <p class="hero-subtitle">Tecnología, ingeniería y talento para transformar la región</p>
+      <p class="hero-copy">
+        Dos días para aprender, experimentar y conectar con quienes están impulsando la innovación tecnológica en Santander.
+        En el marco de la Semana de la Ingeniería de la UNAB.
+      </p>
+      <div class="hero-meta">
+        <span class="chip">Conferencias</span>
+        <span class="chip">Paneles</span>
+        <span class="chip">Talleres</span>
+        <span class="chip">Feria de Experiencias</span>
+        <span class="chip">Rueda de negocios</span>
+        <span class="chip">Innovación y talento</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#inscripcion">Inscríbete al evento</a>
+        <a class="btn secondary" href="#agenda">Conoce la agenda</a>
+      </div>
+      <p class="hero-foot">Evento abierto a estudiantes, profesionales, empresas, emprendimientos, academia, instituciones y público interesado en tecnología.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="impacto">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">PotencIA en cifras</span>
+            <h2>Una programación<br/>hecha para conectar</h2>
+          </div>
+          <p>El evento combina conocimiento, experimentación y oportunidades de relacionamiento en una agenda de dos días.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>2</strong><span>días de programación</span></div>
+          <div class="stat"><strong>5</strong><span>bloques de talleres</span></div>
+          <div class="stat"><strong>3</strong><span>paneles temáticos</span></div>
+          <div class="stat"><strong>2</strong><span>conferencias magistrales</span></div>
+          <div class="stat"><strong>1</strong><span>rueda de negocios</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="experiencias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Un evento, múltiples experiencias</span>
+            <h2>Conocimiento que<br/>se convierte en acción</h2>
+          </div>
+          <p>PotencIA Santander integra espacios para descubrir tendencias, aprender haciendo, conocer soluciones y crear nuevas oportunidades.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="card-icon">🎤</div><h3>Conferencias magistrales</h3><p>Perspectivas sobre competitividad regional, convergencia tecnológica y futuro de la ingeniería.</p></article>
+          <article class="card"><div class="card-icon">💬</div><h3>Paneles y conversatorios</h3><p>Diálogos entre academia, empresas, instituciones y especialistas sobre retos de la región.</p></article>
+          <article class="card"><div class="card-icon">🛠️</div><h3>Talleres prácticos</h3><p>Sesiones simultáneas para explorar herramientas, metodologías y aplicaciones tecnológicas.</p></article>
+          <article class="card"><div class="card-icon">✨</div><h3>Feria de Experiencias</h3><p>Demostraciones de productos, servicios, prototipos y desarrollos de empresas y grupos académicos.</p></article>
+          <article class="card"><div class="card-icon">🤝</div><h3>Networking y negocios</h3><p>Conexiones entre talento, empresas, emprendimientos, investigadores e instituciones.</p></article>
+          <article class="card"><div class="card-icon">🚀</div><h3>Final de innovación</h3><p>Presentación y premiación de los proyectos seleccionados en la convocatoria PotencIA 2026.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ejes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Ejes temáticos</span>
+            <h2>Cuatro caminos para<br/>pensar el futuro</h2>
+          </div>
+          <p>Los contenidos se organizan en cuatro ejes transversales que permiten integrar distintas disciplinas, sectores y aplicaciones.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card axis-card">
+            <div class="card-icon">🧬</div>
+            <h3>Biotecnología</h3>
+            <p>Salud, bioinnovación, tecnologías asistivas, dispositivos, diagnóstico, alimentos, ambiente y soluciones centradas en la vida.</p>
+          </article>
+          <article class="card axis-card">
+            <div class="card-icon">🧠</div>
+            <h3>Inteligencia artificial</h3>
+            <p>Datos, automatización, sistemas inteligentes, analítica, ciberseguridad y aplicaciones responsables de la IA.</p>
+          </article>
+          <article class="card axis-card">
+            <div class="card-icon">🌱</div>
+            <h3>Energía y sostenibilidad</h3>
+            <p>Transición energética, eficiencia, energías renovables, tecnología ambiental, territorio y resiliencia.</p>
+          </article>
+          <article class="card axis-card">
+            <div class="card-icon">📈</div>
+            <h3>Gestión empresarial e innovación tecnológica</h3>
+            <p>Productividad, transformación digital, finanzas, procesos, emprendimiento, comercialización y nuevos modelos de negocio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="agenda">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Agenda preliminar</span>
+            <h2>Dos días para aprender,<br/>experimentar y conectar</h2>
+          </div>
+          <p>La programación integra los tiempos de transición dentro de cada bloque para presentar una agenda más clara y compacta.</p>
+        </div>
+
+        <div class="agenda-tabs" role="tablist">
+          <button class="active" data-day="day1">Día 1 · Jueves 29</button>
+          <button data-day="day2">Día 2 · Viernes 30</button>
+        </div>
+
+        <div class="agenda-day active" id="day1">
+          <div class="agenda-list">
+            <div class="agenda-item">
+              <div class="agenda-time">8:00–9:00</div>
+              <div class="agenda-type">Apertura</div>
+              <div><div class="agenda-title">Registro, café de bienvenida y apertura de la Feria de Experiencias</div><div class="agenda-desc">Primer recorrido por productos, servicios, prototipos y desarrollos tecnológicos.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">9:00–9:15</div>
+              <div class="agenda-type">Bienvenida</div>
+              <div><div class="agenda-title">Apertura institucional de PotencIA Santander 2026</div><div class="agenda-desc">Presentación del encuentro, la alianza institucional y la Semana de la Ingeniería UNAB.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">9:15–10:00</div>
+              <div class="agenda-type">Conferencia</div>
+              <div><div class="agenda-title">De la innovación tecnológica a la competitividad regional</div><div class="agenda-desc">Cómo la ciencia, la ingeniería y las tecnologías emergentes pueden transformar la productividad y el desarrollo de Santander.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">10:00–11:15</div>
+              <div class="agenda-type">Talleres simultáneos</div>
+              <div>
+                <div class="agenda-title">Ruta A · IA y datos para resolver problemas reales</div>
+                <div class="agenda-desc">Del problema al prototipo: análisis, diseño y validación de soluciones asistidas por inteligencia artificial.</div>
+                <div class="agenda-title" style="margin-top:12px">Ruta B · Biotecnología aplicada: del laboratorio a la solución</div>
+                <div class="agenda-desc">Introducción al desarrollo de soluciones biotecnológicas con impacto en salud, alimentos y ambiente.</div>
+              </div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">11:15–12:15</div>
+              <div class="agenda-type">Panel</div>
+              <div><div class="agenda-title">Biotecnología para el bienestar y el desarrollo sostenible</div><div class="agenda-desc">Salud, bioeconomía, seguridad alimentaria, tecnología ambiental y oportunidades para la región.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">12:15–14:15</div>
+              <div class="agenda-type">Networking</div>
+              <div><div class="agenda-title">Almuerzo y networking empresarial</div><div class="agenda-desc">Encuentro entre empresas, universidad, emprendimientos, profesionales, estudiantes e instituciones.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">14:15–15:15</div>
+              <div class="agenda-type">Talleres simultáneos</div>
+              <div>
+                <div class="agenda-title">Ruta A · Automatización e IA para empresas y organizaciones</div>
+                <div class="agenda-desc">Cómo detectar procesos susceptibles de digitalización, automatización y mejora.</div>
+                <div class="agenda-title" style="margin-top:12px">Ruta B · Innovación tecnológica y modelos de negocio</div>
+                <div class="agenda-desc">Diseño de propuestas de valor, validación y posibilidades de escalamiento.</div>
+              </div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">15:15–16:15</div>
+              <div class="agenda-type">Panel</div>
+              <div><div class="agenda-title">Empresas que innovan: productividad, talento y transformación digital</div><div class="agenda-desc">Casos, decisiones y aprendizajes para convertir tecnología en valor organizacional.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">16:15–17:30</div>
+              <div class="agenda-type">Talleres simultáneos</div>
+              <div>
+                <div class="agenda-title">Ruta A · Energía inteligente y sostenibilidad aplicada</div>
+                <div class="agenda-desc">Eficiencia energética, medición, energías renovables y diseño de soluciones sostenibles.</div>
+                <div class="agenda-title" style="margin-top:12px">Ruta B · Finanzas, datos y decisiones empresariales</div>
+                <div class="agenda-desc">Analítica, modelación de escenarios y gestión de riesgos para organizaciones.</div>
+              </div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">17:30–18:30</div>
+              <div class="agenda-type">Panel</div>
+              <div><div class="agenda-title">Energía, sostenibilidad y territorio: retos para una región resiliente</div><div class="agenda-desc">Transición energética, adaptación climática, infraestructura y oportunidades de innovación.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-day" id="day2">
+          <div class="agenda-list">
+            <div class="agenda-item">
+              <div class="agenda-time">8:00–9:00</div>
+              <div class="agenda-type">Apertura</div>
+              <div><div class="agenda-title">Registro, café de bienvenida y apertura de la Feria de Experiencias</div><div class="agenda-desc">Recorrido por demostraciones, proyectos, productos y experiencias interactivas.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">9:00–9:15</div>
+              <div class="agenda-type">Bienvenida</div>
+              <div><div class="agenda-title">Innovación, talento y oportunidades</div><div class="agenda-desc">Presentación de la segunda jornada y de sus espacios de conexión.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">9:15–10:15</div>
+              <div class="agenda-type">Talleres simultáneos</div>
+              <div>
+                <div class="agenda-title">Ruta A · De una necesidad a una solución tecnológica</div>
+                <div class="agenda-desc">Metodología práctica para comprender un reto, formular una solución y construir una propuesta de valor.</div>
+                <div class="agenda-title" style="margin-top:12px">Ruta B · IA responsable: oportunidades, límites y confianza</div>
+                <div class="agenda-desc">Criterios para desarrollar e implementar sistemas de IA seguros, útiles y responsables.</div>
+              </div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">10:15–11:15</div>
+              <div class="agenda-type">Conferencia</div>
+              <div><div class="agenda-title">El futuro de la ingeniería: convergencia tecnológica y nuevas capacidades profesionales</div><div class="agenda-desc">Cómo se integran biotecnología, IA, energía, sostenibilidad e innovación empresarial.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">11:15–12:30</div>
+              <div class="agenda-type">Finalistas</div>
+              <div><div class="agenda-title">Soluciones con potencial para transformar la región</div><div class="agenda-desc">Presentación de los proyectos seleccionados ante jurados, empresas, aliados y público.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">12:30–14:30</div>
+              <div class="agenda-type">Encuentro</div>
+              <div><div class="agenda-title">Almuerzo y conexiones del ecosistema PotencIA</div><div class="agenda-desc">Espacio abierto de relacionamiento entre participantes y organizaciones.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">14:30–16:00</div>
+              <div class="agenda-type">Rueda de negocios</div>
+              <div><div class="agenda-title">Conexiones para implementar, escalar y colaborar</div><div class="agenda-desc">Reuniones entre empresas, proyectos, emprendimientos, instituciones e investigadores.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">16:00–17:15</div>
+              <div class="agenda-type">Talleres simultáneos</div>
+              <div>
+                <div class="agenda-title">Ruta A · Cómo comunicar y presentar una solución tecnológica</div>
+                <div class="agenda-desc">Storytelling, demostración de producto y pitch para públicos técnicos y no técnicos.</div>
+                <div class="agenda-title" style="margin-top:12px">Ruta B · Del prototipo a la implementación sostenible</div>
+                <div class="agenda-desc">Viabilidad técnica, económica, ambiental y organizacional de una solución.</div>
+              </div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">17:15–18:15</div>
+              <div class="agenda-type">Premiación</div>
+              <div><div class="agenda-title">Reconocimiento al talento y la innovación tecnológica</div><div class="agenda-desc">Premiación de los proyectos finalistas y reconocimientos especiales.</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-time">18:15–18:30</div>
+              <div class="agenda-type">Cierre</div>
+              <div><div class="agenda-title">Compromisos y próximos pasos para el ecosistema regional</div><div class="agenda-desc">Resultados preliminares, agradecimientos e invitación a continuar las conexiones.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-note">Los temas y nombres de los espacios son preliminares y podrán ajustarse de acuerdo con la confirmación de ponentes, talleristas y aliados.</div>
+      </div>
+    </section>
+
+    <section class="section" id="feria">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Feria de Experiencias Tecnológicas</span>
+            <h2>Tecnología que<br/>se puede ver y vivir</h2>
+          </div>
+          <p>Un espacio para acercarse a productos, servicios, prototipos y soluciones desarrolladas por empresas, emprendimientos, universidades y organizaciones.</p>
+        </div>
+        <div class="grid-3 spaces">
+          <article class="card"><div class="card-icon">🧪</div><h3>Demostraciones</h3><p>Experiencias en vivo, pruebas de concepto, prototipos y aplicaciones tecnológicas.</p></article>
+          <article class="card"><div class="card-icon">🏢</div><h3>Soluciones empresariales</h3><p>Productos y servicios orientados a productividad, transformación digital e innovación.</p></article>
+          <article class="card"><div class="card-icon">🎓</div><h3>Desarrollos académicos</h3><p>Investigación aplicada, semilleros, laboratorios, proyectos y capacidades universitarias.</p></article>
+          <article class="card"><div class="card-icon">🚀</div><h3>Emprendimientos</h3><p>Soluciones emergentes con potencial de crecimiento, implementación y articulación.</p></article>
+          <article class="card"><div class="card-icon">🌿</div><h3>Innovación sostenible</h3><p>Tecnologías para energía, ambiente, eficiencia y desarrollo territorial.</p></article>
+          <article class="card"><div class="card-icon">🤖</div><h3>Experiencias interactivas</h3><p>Activaciones, simulaciones y demostraciones diseñadas para el público general.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="publicos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">¿Para quién es?</span>
+            <h2>Un punto de encuentro<br/>para todo el ecosistema</h2>
+          </div>
+          <p>PotencIA Santander está pensado para quienes quieren aprender, mostrar soluciones, encontrar talento o construir nuevas alianzas.</p>
+        </div>
+        <div class="grid-4 audiences">
+          <article class="card"><h3>Estudiantes y egresados</h3><p>Aprende, participa en talleres y conecta con organizaciones y oportunidades.</p></article>
+          <article class="card"><h3>Profesionales e investigadores</h3><p>Actualiza conocimientos y conversa con especialistas de diferentes disciplinas.</p></article>
+          <article class="card"><h3>Empresas e instituciones</h3><p>Conoce soluciones, identifica talento y participa en espacios de relacionamiento.</p></article>
+          <article class="card"><h3>Emprendimientos y expositores</h3><p>Da visibilidad a productos, servicios, prototipos y desarrollos tecnológicos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="convocatoria">
+      <div class="container">
+        <div class="callout">
+          <div>
+            <span class="eyebrow">Convocatoria de innovación</span>
+            <h2>Presenta una solución<br/>con potencial de impacto</h2>
+            <p>La fase final y la premiación de la convocatoria PotencIA 2026 se realizarán durante el evento. Los proyectos seleccionados accederán a un proceso de fortalecimiento previo y presentarán sus soluciones ante jurados, empresas, aliados y público.</p>
+          </div>
+          <a class="btn primary" href="#inscripcion">Quiero recibir información</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="aliados">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Aliados</span>
+            <h2>Construyamos juntos<br/>el ecosistema tecnológico</h2>
+          </div>
+          <p>Las organizaciones aliadas pueden participar mediante contenidos, talleres, experiencias, demostraciones, conexión empresarial o apoyo institucional.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="card-icon">🎯</div><h3>Aliado de contenidos</h3><p>Conferencias, paneles, talleres y conocimiento especializado.</p></article>
+          <article class="card"><div class="card-icon">💡</div><h3>Aliado de experiencias</h3><p>Demostraciones, activaciones, productos y experiencias tecnológicas.</p></article>
+          <article class="card"><div class="card-icon">🔗</div><h3>Aliado del ecosistema</h3><p>Relacionamiento, convocatoria, rueda de negocios y articulación regional.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inscripcion">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Mantente conectado</span>
+            <h2>Recibe información<br/>sobre PotencIA 2026</h2>
+          </div>
+          <p>Este formulario es una maqueta visual. Conéctalo posteriormente con la herramienta de registro que defina el equipo organizador.</p>
+        </div>
+        <form class="form-card" onsubmit="event.preventDefault(); document.getElementById('formMessage').textContent='Gracias. Esta versión es una maqueta y aún no envía información.';">
+          <div class="form-grid">
+            <label>Nombre completo<input type="text" required placeholder="Tu nombre" /></label>
+            <label>Correo electrónico<input type="email" required placeholder="correo@ejemplo.com" /></label>
+            <label>Organización o institución<input type="text" placeholder="Nombre de la organización" /></label>
+            <label>Perfil de participación
+              <select required>
+                <option value="">Selecciona una opción</option>
+                <option>Quiero asistir</option>
+                <option>Quiero postular un proyecto</option>
+                <option>Quiero participar como expositor</option>
+                <option>Quiero vincular mi organización</option>
+                <option>Quiero participar en la rueda de negocios</option>
+              </select>
+            </label>
+            <label class="full">Mensaje o interés principal<textarea placeholder="Cuéntanos brevemente cómo te gustaría participar"></textarea></label>
+            <div class="full"><button class="btn primary" type="submit">Enviar interés</button></div>
+          </div>
+          <p id="formMessage" class="form-help"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><span class="brand-mark">⚡</span><span>POTENC<span class="accent">IA</span></span></div>
+          <p style="margin-top:12px;max-width:480px">Tecnología, ingeniería y talento para transformar la región.</p>
+        </div>
+        <div>
+          <div class="footer-title">Evento</div>
+          <p>29 y 30 de octubre de 2026</p>
+          <p>Universidad Autónoma de Bucaramanga</p>
+          <p>Semana de la Ingeniería UNAB</p>
+        </div>
+        <div>
+          <div class="footer-title">Navegación</div>
+          <p><a href="#agenda">Agenda</a></p>
+          <p><a href="#ejes">Ejes temáticos</a></p>
+          <p><a href="#convocatoria">Convocatoria</a></p>
+          <p><a href="#inscripcion">Inscripción</a></p>
+        </div>
+      </div>
+      <div class="copyright">PotencIA Santander 2026 · Prototipo de landing page en archivo HTML independiente.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.agenda-tabs button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.agenda-tabs button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.agenda-day').forEach(day => day.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(button.dataset.day).classList.add('active');
+      });
+    });
+
+    const toggle = document.querySelector('.mobile-toggle');
+    toggle.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      const open = getComputedStyle(links).display !== 'none';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.position = 'absolute';
+      links.style.top = '70px';
+      links.style.left = '16px';
+      links.style.right = '16px';
+      links.style.flexDirection = 'column';
+      links.style.alignItems = 'stretch';
+      links.style.padding = '14px';
+      links.style.background = 'rgba(6,16,31,.98)';
+      links.style.border = '1px solid rgba(255,255,255,.10)';
+      links.style.borderRadius = '16px';
+    });
+  </script>
+</body>
+</html>
