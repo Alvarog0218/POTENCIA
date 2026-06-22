@@ -1,6 +1,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +18,7 @@ html,
 body,
 #root {
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -27,19 +29,6 @@ body {
 }
 
 /* ─── Custom utilities ──────────────────────────────────────────── */
-
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
-  animation: grid-move 4s linear infinite;
-}
-
-@keyframes grid-move {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 64px; }
-}
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
