@@ -12,6 +12,7 @@ import {
   Wifi, Zap, Globe, Mail, BookOpen,
   Brain, Clock,
 } from 'lucide-react';
+import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern';
 
 /* ─────────────────────────────────────────────────────────────────
    Utility Components
@@ -202,12 +203,18 @@ function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050d1a]"
     >
-      {/* Grid background */}
-      <div className="absolute inset-0 hero-grid" />
+      {/* Interactive Grid background */}
+      <InteractiveGridPattern
+        className="absolute inset-0 h-full w-full opacity-20 [mask-image:radial-gradient(1000px_circle_at_center,white,transparent)] mix-blend-screen"
+        width={60}
+        height={60}
+        squares={[40, 40]}
+        squaresClassName="hover:fill-cyan-500/20"
+      />
 
       {/* Glow orbs */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-cyan-500/6 blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/5 w-[400px] h-[400px] rounded-full bg-blue-700/6 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-cyan-500/15 blur-[140px] pointer-events-none animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-1/5 w-[400px] h-[400px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none animate-pulse-glow" style={{ animationDelay: '2s' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-28 pb-20">
         {/* Live badge */}
@@ -217,7 +224,7 @@ function Hero() {
         </div>
 
         {/* Main title */}
-        <h1 className="font-display font-black leading-none mb-2">
+        <h1 className="font-display font-black leading-none mb-2 animate-float">
           <span className="block text-[clamp(4rem,14vw,9rem)] tracking-tight text-white">
             POTENC<span className="text-cyan-400">IA</span>
           </span>
@@ -296,7 +303,7 @@ function ImpactoSection() {
 
   return (
     <section id="impacto" className="py-24 bg-[#050d1a] relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/4 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-transparent pointer-events-none animate-pulse-glow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
@@ -314,7 +321,7 @@ function ImpactoSection() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
           {stats.map((s, i) => (
             <Reveal key={i} delay={i * 80}>
-              <div className="rounded-2xl p-6 md:p-8 bg-[#0a1628] border border-slate-700/60 hover:border-cyan-500/30 transition-all duration-300 hover:-translate-y-0.5">
+              <div className="rounded-2xl p-6 md:p-8 bg-[#0a1628] border border-slate-700/60 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300 hover:-translate-y-1 group">
                 <div
                   className={`font-display font-black text-5xl md:text-6xl ${
                     s.color === 'cyan' ? 'text-gradient-cyan' : 'text-gradient-amber'
@@ -609,8 +616,19 @@ function EstructuraSection() {
   ];
 
   return (
-    <section id="estructura" className="py-24 bg-[#050d1a]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="estructura" className="py-24 bg-[#050d1a] relative overflow-hidden">
+      {/* Skewed Interactive Grid Background */}
+      <div className="absolute inset-0 pointer-events-auto">
+        <InteractiveGridPattern
+          className="[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 opacity-40 mix-blend-screen"
+          width={60}
+          height={60}
+          squares={[40, 40]}
+          squaresClassName="hover:fill-amber-500/30"
+        />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
           <div className="text-center mb-12">
             <span className="text-cyan-400 text-xs font-bold tracking-[0.22em] uppercase">Agenda Preliminar</span>
@@ -858,8 +876,8 @@ function PublicosSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {audiences.map((aud, i) => (
             <Reveal key={i} delay={i * 60}>
-              <div className="rounded-xl p-6 bg-[#0a1628] border border-slate-700/50 hover:border-slate-600 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-5 ${iconCls[aud.color]}`}>
+              <div className="rounded-xl p-6 bg-[#0a1628] border border-slate-700/50 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform ${iconCls[aud.color]}`}>
                   {aud.icon}
                 </div>
                 
