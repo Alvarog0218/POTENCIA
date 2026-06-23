@@ -121,7 +121,7 @@ function Nav() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#050d1a]/95 backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl shadow-black/60'
+          ? 'bg-[#050d1a]/95 backdrop-blur-md md:backdrop-blur-xl border-b border-cyan-500/10 shadow-2xl shadow-black/60'
           : 'bg-transparent'
       }`}
     >
@@ -169,7 +169,7 @@ function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#050d1a]/98 backdrop-blur-xl border-t border-slate-800 px-4 py-3 space-y-1">
+        <div className="md:hidden bg-[#050d1a]/98 backdrop-blur-md border-t border-slate-800 px-4 py-3 space-y-1">
           {NAV_LINKS.map((l) => (
             <a
               key={l.href}
@@ -213,8 +213,8 @@ function Hero() {
       />
 
       {/* Glow orbs */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-cyan-500/15 blur-[140px] pointer-events-none animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/5 w-[400px] h-[400px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none animate-pulse-glow" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-cyan-500/15 blur-[80px] md:blur-[140px] pointer-events-none md:animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-1/5 w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full bg-blue-600/15 blur-[60px] md:blur-[120px] pointer-events-none md:animate-pulse-glow" style={{ animationDelay: '2s' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-28 pb-20">
         {/* Live badge */}
@@ -303,7 +303,7 @@ function ImpactoSection() {
 
   return (
     <section id="impacto" className="py-24 bg-[#050d1a] relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-transparent pointer-events-none animate-pulse-glow" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-transparent pointer-events-none md:animate-pulse-glow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>

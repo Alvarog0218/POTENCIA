@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -18,6 +18,16 @@ export function InteractiveGridPattern({
 }) {
   const [horizontal, vertical] = squares
   const [hoveredSquare, setHoveredSquare] = useState(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   return (
     <svg
@@ -25,7 +35,7 @@ export function InteractiveGridPattern({
       height={height * vertical}
       className={cn("absolute inset-0 h-full w-full border border-gray-400/30", className)}
       {...props}>
-      {Array.from({ length: horizontal * vertical }).map((_, index) => {
+      {!isMobile && Array.from({ length: horizontal * vertical }).map((_, index) => {
         const x = (index % horizontal) * width
         const y = Math.floor(index / horizontal) * height
         return (
@@ -44,6 +54,17 @@ export function InteractiveGridPattern({
             onMouseLeave={() => setHoveredSquare(null)} />
         );
       })}
+
+      {isMobile && (
+        <>
+          <defs>
+            <pattern id={`grid-pattern-${width}-${height}`} width={width} height={height} patternUnits="userSpaceOnUse">
+              <rect width={width} height={height} fill="none" className="stroke-gray-400/30" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill={`url(#grid-pattern-${width}-${height})`} />
+        </>
+      )}
     </svg>
   );
 }
