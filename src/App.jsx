@@ -238,7 +238,7 @@ function Hero() {
           Tecnología, ingeniería y talento para transformar la región
         </p>
         <p className="text-lg text-slate-500 max-w-3xl mx-auto mt-4 mb-10 leading-relaxed">
-          Dos días para aprender, experimentar y conectar con quienes están impulsando la innovación tecnológica en Santander. En el marco de la Semana de la Ingeniería de la UNAB.
+          Dos días. Una ciudad. Una visión: convertir a Santander en la PotencIA Tech que lidera la transformación digital de Latinoamérica.
         </p>
 
         {/* CTAs */}
